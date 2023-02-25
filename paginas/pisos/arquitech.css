@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-body{
+
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -10,300 +11,323 @@ body{
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
 }
-h1,a,p,h2,h3{
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+h1,
+a,
+p,
+h2,
+h3 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.button1{
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
+
+.button1 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
 }
+
 header {
-    position: relative;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  }
-  
+  position: relative;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: #212529;
+}
+
+
+
+label {
+  padding: 23px 20px;
+  position: absolute;
+  cursor: pointer;
+
+}
+
+input[type="checkbox"] {
+  position: absolute;
+}
+
+label span {
+  width: 20px;
+  height: 3px;
+  display: block;
+  background: #4f3e3e;
+  position: relative;
+}
+
+label span::after,
+label span::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background: inherit;
+  width: inherit;
+  height: inherit;
+}
+
+label span::before {
+  top: 8px;
+}
+
+label span::after {
+  bottom: 8px;
+}
+
+label::before {
+  position: absolute;
+  content: "";
+  width: 58px;
+  height: 49px;
+  top: 0;
+  right: 0;
+}
+
+input[type="checkbox"]:focus+label::before {
+  box-shadow: 0 0 20px black;
+}
+
+ul {
+  background: #000000;
+}
+
+ul li {
+  list-style: none;
+  font-size: 18px;
+}
+
+ul li button {
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+ul li a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+ul li a,
+ul li button {
+  padding: 0.7rem 1rem;
+  text-align: left;
+}
+
+.menus {
+  position: absolute;
+  top: 3.2rem;
+  left: 0;
+  right: 0;
+
+  /*  hide dropdown on small screens  */
+  visibility: hidden;
+  /*  smooth transitioning  */
+  transform: translateY(-1em);
+  transition: transform ease 0.2s;
+}
+
+/* toggle main dropdown */
+
+input[type="checkbox"]:checked~nav>ul {
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown {
+  padding: 2px 1.5rem;
+  height: 0;
+  overflow: hidden;
+  transition: height ease 0.2s;
+}
+
+li:focus-within .dropdown {
+  height: 180px;
+}
+
+.arrow {
+  width: 0.5em;
+  height: 0.5em;
+  display: inline-block;
+  vertical-align: middle;
+  border-left: 0.15em solid currentColor;
+  border-bottom: 0.15em solid currentColor;
+  transform: rotate(-45deg);
+  margin-left: 0.38em;
+  margin-top: -0.25em;
+  transition: transform 100ms ease-in-out;
+}
+
+li:focus-within>button>.arrow {
+  transform: rotate(-225deg);
+  margin-top: 4px;
+}
+
+/* MEDIA QUERIES  */
+@media (min-width: 640px) {
+
   .header-content {
-    justify-content: space-around;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px 20px;
-    color: #212529;
-  }
-  
-
-  
-  label {
-    padding: 23px 20px;
-    position: absolute;
-    cursor: pointer;
-  
-  }
-  
-  input[type="checkbox"] {
-    position: absolute;
-  }
-  
-  label span {
-    width: 20px;
-    height: 3px;
-    display: block;
-    background: #4f3e3e;
-    position: relative;
-  }
-  
-  label span::after, label span::before {
-    content: "";
-    position: absolute;
-    display: block;
-    background: inherit;
-    width: inherit;
-    height: inherit;
-  } 
-  
-  label span::before{
-    top: 8px;
-  }
-  
-  label span::after {
-    bottom: 8px;
-  } 
-  
-  label::before {
-    position: absolute;
-    content: "";
-    width: 58px;
-    height: 49px; 
-    top: 0;
-    right: 0;
-  }
-  
-  input[type="checkbox"]:focus + label::before {
-    box-shadow: 0 0 20px black;
-  }
- 
-  ul {
-    background: #000000;
-  }
-  
-  ul li {
-     list-style: none;
-     font-size: 18px;
+    display: flex;
   }
 
-  ul li button {
-      background-color: transparent;
-      cursor: pointer;
-      width: 100%;
-      font-size:18px;
-  }
-  
-  ul li a {
-     display: block;
-     color: inherit;
-     text-decoration: none;
-  }
-  
-  ul li a, ul li button {
-    padding: 0.7rem 1rem;
-    text-align: left;
-  }
-  
   .menus {
-    position: absolute;
-    top: 3.2rem;
-    left: 0;
-    right: 0;
-    
-    /*  hide dropdown on small screens  */
-    visibility: hidden;
-    /*  smooth transitioning  */
-    transform: translateY(-1em);
-    transition: transform ease 0.2s;
-  }
-  
-  /* toggle main dropdown */
-  
-  input[type="checkbox"]:checked ~ nav > ul {
+    position: static;
     visibility: visible;
-    transform: translateY(0);
+    background: rgb(0, 0, 0);
+    display: flex;
+    transform: initial;
   }
-  
+
+  label,
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  ul li {
+    position: relative;
+    font-size: 14px;
+  }
+
+  ul li a:hover,
+  ul li button:hover {
+    background-color: #f2f2f2;
+  }
+
   .dropdown {
-    padding: 2px 1.5rem;
-    height: 0;
-    overflow: hidden;
-    transition: height ease 0.2s;
+    position: absolute;
+    right: 0;
+    left: auto;
+    box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
+      0 4px 6px -2px rgba(71, 63, 79, 0.16);
+    z-index: 99;
+    min-width: 10rem;
+    padding: 0;
+    background-color: #fff;
+    border-radius: 0 0 0.5rem 0.5rem;
   }
-  
-  li:focus-within .dropdown {
-    height: 180px;
+
+  ul li:hover .dropdown {
+    height: 450px;
   }
-  
-  .arrow {
-    width: 0.5em;
-    height: 0.5em;
-    display: inline-block;
-    vertical-align: middle;
-    border-left: 0.15em solid currentColor;
-    border-bottom: 0.15em solid currentColor;
-    transform: rotate(-45deg);
-    margin-left: 0.38em;
-    margin-top: -0.25em;
-    transition: transform 100ms ease-in-out;
-  }
-  
-  li:focus-within > button > .arrow {
+
+
+  ul li:hover>button>.arrow {
     transform: rotate(-225deg);
     margin-top: 4px;
   }
-  
-  /* MEDIA QUERIES  */
-  @media (min-width: 640px) {
-    
-    .header-content {
-      display: flex;
-    }
-    
-    .menus {
-      position: static;
-      visibility: visible;
-      background: rgb(0, 0, 0);
-      display: flex;
-      transform: initial;
-    }
-    
-    label, input[type="checkbox"] {
-      display: none;
-    }
-    
-    ul li {
-      position: relative;
-      font-size: 14px;
-    }
-    
-    ul li a:hover,
-    ul li button:hover {
-      background-color: #f2f2f2;
-    }
-    
-    .dropdown {
-      position: absolute;
-      right: 0;
-      left: auto;
-      box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
-      0 4px 6px -2px rgba(71, 63, 79, 0.16);
-      z-index: 99;
-      min-width: 10rem;
-      padding: 0;
-      background-color: #fff;
-      border-radius: 0 0 0.5rem 0.5rem; 
-    }
-    
-    ul li:hover .dropdown {
-      height: 450px;
-    }
-
-    
-    ul li:hover > button > .arrow {
-      transform: rotate(-225deg);
-      margin-top: 4px;
-    }
-  }
-  .logo{
-    height: 20%;
-    width: 20%;
-  }
-
-  
-  .card{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-color:  rgba(211, 211, 211, 0.925); 
-    padding: 15px;
-  }
-  .grid{
-      display: flex;
-      justify-content: space-between;
-      width: 90%;
-      height: 100%;
-      flex-wrap: wrap;
-      
-  }
-  
-  .imagem2{
-      display: block;
-      width: 600px;
-      height: 400px;
-      margin: 40px;
-      border: 5px solid white;
-      box-shadow: 0 5px 15px black;
-  }
-  .imagem2:hover{
-    transform: scale(1.1);
-  }
-.divisor3{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 100px;
-    margin-bottom: 100px;
 }
 
-.footerbase{
-    display: flex;
-    flex-direction: row;
-    background-color:#24252b;
-    width: 100%;
-    height: 260px;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-  .span1{
+.logo {
+  height: 20%;
+  width: 20%;
+}
+
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(211, 211, 211, 0.925);
+  padding: 15px;
+}
+
+.grid {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 100%;
+  flex-wrap: wrap;
+
+}
+
+.imagem2 {
+  display: block;
+  width: 600px;
+  height: 400px;
+  margin: 40px;
+  border: 5px solid white;
+  box-shadow: 0 5px 15px black;
+}
+
+.imagem2:hover {
+  transform: scale(1.1);
+}
+
+.divisor3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.footerbase {
+  display: flex;
+  flex-direction: row;
+  background-color: #24252b;
+  width: 100%;
+  height: 260px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.span1 {
   border: 1px solid rgb(187, 187, 187);
   height: 120px;
   width: 25%;
   box-shadow: 5px 10px rgb(187, 187, 187);
-  }
-  .span2{
-    border: 1px solid rgb(187, 187, 187);
-    height: 120px;
-    width: 25%;
-    box-shadow: 5px 10px rgb(187, 187, 187);
-    }
-    .imglink{
-      color: white;
-      text-decoration: none;
-    }
-    .imglink1{
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    .imglink1:hover{
-      color: #bd8133;
-      transform: scale(1.2);
-    }
-    .divisor{
-      padding: 8px;
-      display: flex;
-      justify-content: space-evenly;
-    }
-    .divisor2{
-      padding: 8px;
-      display: flex;
-      justify-content: space-evenly;
-      flex-direction: auto;
-      align-items: center;
-    }
-    .iconecontato{
-      width: 50px;
-      height: 50px;
-    }
-    .iconecontato:hover{
-      transform: scale(1.2);
-    }
+}
+
+.span2 {
+  border: 1px solid rgb(187, 187, 187);
+  height: 120px;
+  width: 25%;
+  box-shadow: 5px 10px rgb(187, 187, 187);
+}
+
+.imglink {
+  color: white;
+  text-decoration: none;
+}
+
+.imglink1 {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.imglink1:hover {
+  color: #bd8133;
+  transform: scale(1.2);
+}
+
+.divisor {
+  padding: 8px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.divisor2 {
+  padding: 8px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: auto;
+  align-items: center;
+}
+
+.iconecontato {
+  width: 50px;
+  height: 50px;
+}
+
+.iconecontato:hover {
+  transform: scale(1.2);
+}
