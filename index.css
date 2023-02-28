@@ -10,6 +10,7 @@ body {
   scroll-behavior: smooth;
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
+    
 }
 
 h1,
@@ -352,11 +353,17 @@ li:focus-within>button>.arrow {
   display: flex;
   background-color: rgba(0, 0, 0, 0.925);
   width: 100vw;
-  height: 500px;
+  height: 100%;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 10%;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/cardopaco/again.png");
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 .sessao2 {
   margin-left: 2%;
@@ -610,32 +617,73 @@ li:focus-within>button>.arrow {
   transform: scale(1.2);
 }
 
-.footerbase {
-  display: flex;
-  flex-direction: row;
-  background-color: #24252b;
-  width: 100%;
-  height: 260px;
-  margin-top: 50px;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.span1 {
-  border: 1px solid rgb(187, 187, 187);
-  height: 120px;
-  width: 25%;
-  box-shadow: 5px 10px rgb(187, 187, 187);
-}
-
 .span2 {
   border: 1px solid rgb(187, 187, 187);
   height: 120px;
   width: 25%;
   box-shadow: 5px 10px rgb(187, 187, 187);
 }
+.divisor2 {
+  padding: 8px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footerbase {
+  display: flex;
+  flex-direction: row;
+  background-color: #24252b;
+  width: 100%;
+  height: 400px;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}
+
+.footerbase1 {
+  display: flex;
+  flex-direction: row;
+  background-color: #24252b;
+  width: 100%;
+  height: 360px;
+  justify-content: space-evenly;
+}
+.span1 {
+  height: 120px;
+  width: 25%;
+  margin-top: 50px;
+}
+  .card2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+
+.span3 {
+  height: 120px;
+  width: 25%;
+  border-top:2px solid #bd8133;
+}
 
 .imglink {
+  color: white;
+  text-decoration: none;
+}
+.imglink2 {
+  text-align: justify;
   color: white;
   text-decoration: none;
 }
@@ -644,32 +692,131 @@ li:focus-within>button>.arrow {
   color: white;
   text-decoration: none;
   font-size: 18px;
+  margin: 5px;
+  margin-bottom: 15px;
+}
+.imglink1:hover{
+  color: #bd8133;
+  transform: scale(1.1);
 }
 
-.imglink1:hover {
+.textlink {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 5px;
+}
+.textlink:hover{
+  transform: scale(1.1);
   color: #bd8133;
-  transform: scale(1.2);
 }
 
 .divisor {
   padding: 8px;
   display: flex;
   justify-content: space-evenly;
+  flex-direction: row;
+  
+  border-top:2px solid #bd8133;
 }
 
-.divisor2 {
+
+.divisor3 {
   padding: 8px;
   display: flex;
-  justify-content: space-evenly;
-  flex-direction: auto;
-  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
 }
-
+.divisor5 {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+  align-items: flex-start;
+}
 .iconecontato {
   width: 50px;
   height: 50px;
+  margin-top: 20px;
 }
 
 .iconecontato:hover {
   transform: scale(1.2);
+}
+
+
+
+.gridcard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 100%;
+  flex-direction: column;
+
+}
+.containergrid{
+  display: flex;
+  width: 70%;
+  height: 60%;
+  flex-direction: row ;
+
+}
+.imagemgrid{
+  width: 100%;
+  height: 250px;
+}
+.imagemgridtxt{
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff70;
+  
+}
+.imginsidegrid{
+  width: 100%;
+  height: 100%;
+}
+.txtgrid{
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.425);
+  text-decoration: none;
+}
+.txtgrid:hover{
+  color: #db9334;
+  transform: scale(1.2);
+}
+.insidecontainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  padding-right: 5px;
+}
+.insidecontainerlast{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  
+  border-right: 2px solid #db9334;
+}
+
+.borda{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 2px;
+  border-right: 2px solid #db9334;
+}.divisor4{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #00000000;
+  margin-left: 10%;
 }
